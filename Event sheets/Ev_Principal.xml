@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Ev_Principal</name>
+    <events>
+        <variable comment="0=Off 1=On" constant="0" name="Var_Sistema" sid="354363732051479" static="0" type="number">1</variable>
+        <include>Ev_Jogador_1</include>
+        <event-block sid="379720638947399">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="269527256916233" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="524060010098846">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="593725508370089" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

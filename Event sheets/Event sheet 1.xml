@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <include>Ev_Principal</include>
+        <event-block sid="489656266162181">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="521196539768894" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="697757316207193" type="SPR_J1">
+                    <param id="0" name="X">64</param>
+                    <param id="1" name="Y">160</param>
+                </action>
+                <action id="-3" name="Set position" sid="662805852721805" type="SPR_P1">
+                    <param id="0" name="X">SPR_J1.X</param>
+                    <param id="1" name="Y">SPR_J1.Y</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="589910161300153" type="SPR_P1">
+                    <param id="0" name="Pin to">SPR_J1</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
