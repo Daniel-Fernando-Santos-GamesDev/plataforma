@@ -13,14 +13,6 @@
                     <param id="0" name="X">64</param>
                     <param id="1" name="Y">160</param>
                 </action>
-                <action id="-3" name="Set position" sid="662805852721805" type="SPR_P1">
-                    <param id="0" name="X">SPR_J1.X</param>
-                    <param id="1" name="Y">SPR_J1.Y</param>
-                </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="589910161300153" type="SPR_P1">
-                    <param id="0" name="Pin to">SPR_J1</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
             </actions>
         </event-block>
     </events>

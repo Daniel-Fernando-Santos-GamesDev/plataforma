@@ -19,7 +19,6 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -27,8 +26,11 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -45,7 +47,7 @@
         <prop name="Clear background">No</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox integer scale</prop>
-        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Fullscreen scaling quality">Low</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
@@ -92,69 +94,52 @@
                 <plugin id="NodeWebkit" />
             </object-type>
         </object-folder>
-        <object-type name="Text" sid="2985603725420557">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="SPR_J1" sid="565543305224255">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Var_ATK" sid="214027084663060" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="742918067207558">
                     <behavior id="Platform" />
                 </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="772005008261759" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="SPR_P1" sid="864386872378431">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Pin" sid="919535408455264">
-                    <behavior id="Pin" />
+                <behavior-type name="ScrollTo" sid="692060158583276">
+                    <behavior id="scrollto" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="P1_Parado" pingpong="0" repeatcount="1" repeatto="0" sid="532388119239269" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tiles\tile_0045.png">
-                        <collision-poly>
-                            <point x="0.1875" y="0.1875" />
-                            <point x="0.5" y="0.125" />
-                            <point x="0.6875" y="0.3125" />
-                            <point x="0.875" y="0.875" />
-                            <point x="0.5" y="0.9375" />
-                            <point x="0.125" y="0.875" />
-                            <point x="0.25" y="0.5" />
-                        </collision-poly>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="772005008261759" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1.125" y="0.5" />
                     </frame>
-                </animation>
-                <animation framecount="2" loop="0" name="P1_Andar" pingpong="0" repeatcount="1" repeatto="0" sid="448894370238555" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tiles\tile_0046.png">
-                        <collision-poly>
-                            <point x="0.125" y="0.125" />
-                            <point x="0.5" y="0.0625" />
-                            <point x="0.75" y="0.25" />
-                            <point x="0.75" y="0.5" />
-                            <point x="0.875" y="0.875" />
-                            <point x="0.5" y="0.8125" />
-                            <point x="0.125" y="0.875" />
-                            <point x="0.25" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tiles\tile_0045.png" />
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Tilemap" sid="207529206660616">
-            <plugin id="Tilemap" />
-            <texture original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tilemap\tilemap_packed (32x32).png" />
-            <tiles />
-        </object-type>
         <object-type name="TBG_Solid" sid="991685355746541">
             <plugin id="Tilemap" />
+            <behaviors>
+                <behavior-type name="Solid" sid="639096474444219">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <texture />
             <tiles />
+        </object-type>
+        <object-type name="SPR_J1_ATK_Shot" sid="567605233900711">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="768978603146661">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="166910567730799">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="625231776000882" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

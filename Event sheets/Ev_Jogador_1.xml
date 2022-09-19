@@ -73,6 +73,19 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="533434517510253">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="435639597110226" type="Keyboard">
+                                    <param id="0" name="Key">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="521925866279875" type="Function">
+                                    <param id="0" name="Name">&quot;Mover&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;ATK&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="162206839862552" title="Controle">
@@ -175,9 +188,6 @@
                                                 <action id="7" name="Set mirrored" sid="534121591197782" type="SPR_J1">
                                                     <param id="0" name="State">1</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="973372156512523" type="SPR_P1">
-                                                    <param id="0" name="State">1</param>
-                                                </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -202,9 +212,6 @@
                                             </conditions>
                                             <actions>
                                                 <action id="7" name="Set mirrored" sid="896141554056134" type="SPR_J1">
-                                                    <param id="0" name="State">0</param>
-                                                </action>
-                                                <action id="7" name="Set mirrored" sid="632371991136990" type="SPR_P1">
                                                     <param id="0" name="State">0</param>
                                                 </action>
                                             </actions>
@@ -240,60 +247,68 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="940824540867922">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="585927351579046" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;ATK&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="929111040898331" type="SPR_J1">
+                                            <param id="0" name="Instance variable">Var_ATK</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="466083938581570" title="Animacao">
+                <event-group description="" sid="611953751008927" title="Acoes">
                     <sub-events>
-                        <event-block sid="973009345991118">
+                        <comment>ATK - Tiro</comment>
+                        <event-block sid="886980079321484">
                             <conditions>
-                                <condition behavior="Platform" id="2" name="Is on floor" sid="280139251212790" type="SPR_J1" />
+                                <condition id="-8" name="Is boolean instance variable set" sid="610248717090776" type="SPR_J1">
+                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="504124960034453" type="System" />
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="620412658240963">
-                                    <conditions>
-                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="968615144464003" type="SPR_J1" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="549551784677045" type="SPR_P1">
-                                            <param id="0" name="Animation">&quot;P1_Parado&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="602869164667905">
-                                    <conditions>
-                                        <condition behavior="Platform" id="0" name="Is moving" sid="896333359298986" type="SPR_J1" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="447506702632020" type="SPR_P1">
-                                            <param id="0" name="Animation">&quot;P1_Andar&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="359234865181478" type="SPR_J1">
+                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="824722053725909" type="SPR_J1">
+                                    <param id="0" name="Object">SPR_J1_ATK_Shot</param>
+                                    <param id="1" name="Layer">&quot;Base&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
                         </event-block>
-                        <event-block sid="294625024448917">
+                        <event-block sid="250337013277051">
                             <conditions>
-                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="738894851880135" type="SPR_J1" />
+                                <condition id="-18" name="On created" sid="157229614778871" type="SPR_J1_ATK_Shot" />
+                                <condition id="7" name="Is mirrored" sid="417451052303572" type="SPR_J1" />
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="277384079378357">
-                                    <conditions>
-                                        <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="454282567870445" type="SPR_J1" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="235100176763213" type="SPR_P1">
-                                            <param id="0" name="Animation">&quot;P1_Andar&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="927550152086367" type="SPR_J1_ATK_Shot">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="129312745935678">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="943081189371543" type="SPR_J1_ATK_Shot" />
+                                <condition id="7" inverted="1" name="Is mirrored" sid="407717416596691" type="SPR_J1" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="289844792688374" type="SPR_J1_ATK_Shot">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
