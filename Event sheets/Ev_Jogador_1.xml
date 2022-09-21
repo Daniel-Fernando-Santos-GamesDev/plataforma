@@ -173,6 +173,9 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Dir&quot;</param>
                                         </condition>
+                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="874880774969958" type="SPR_J1">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action behavior="Platform" id="7" name="Simulate control" sid="286354660655956" type="SPR_J1">
@@ -198,6 +201,9 @@
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Esq&quot;</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="248056695360531" type="SPR_J1">
+                                            <param id="0" name="Side">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -281,13 +287,39 @@
                                     <param id="0" name="Instance variable">Var_ATK</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="824722053725909" type="SPR_J1">
-                                    <param id="0" name="Object">SPR_J1_ATK_Shot</param>
-                                    <param id="1" name="Layer">&quot;Base&quot;</param>
-                                    <param id="2" name="Image point">1</param>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="808145969900871">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="618939540559278" type="System">
+                                            <param id="0" name="Variable">Var_ATK</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="824722053725909" type="SPR_J1">
+                                            <param id="0" name="Object">SPR_J1_ATK_Shot</param>
+                                            <param id="1" name="Layer">&quot;Base&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>direcao do disparo - direita</comment>
+                        <event-block sid="129312745935678">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="943081189371543" type="SPR_J1_ATK_Shot" />
+                                <condition id="7" inverted="1" name="Is mirrored" sid="407717416596691" type="SPR_J1" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="289844792688374" type="SPR_J1_ATK_Shot">
+                                    <param id="0" name="Angle">0</param>
                                 </action>
                             </actions>
                         </event-block>
+                        <comment>direcao do disparo - esquerda</comment>
                         <event-block sid="250337013277051">
                             <conditions>
                                 <condition id="-18" name="On created" sid="157229614778871" type="SPR_J1_ATK_Shot" />
@@ -299,15 +331,19 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="129312745935678">
+                        <comment>destruir disparo</comment>
+                        <event-block any="1" sid="782315228593674">
                             <conditions>
-                                <condition id="-18" name="On created" sid="943081189371543" type="SPR_J1_ATK_Shot" />
-                                <condition id="7" inverted="1" name="Is mirrored" sid="407717416596691" type="SPR_J1" />
+                                <condition id="1" name="Is overlapping another object" sid="212724636743166" type="SPR_J1_ATK_Shot">
+                                    <param id="0" name="Object">TBG_Solid</param>
+                                </condition>
+                                <condition id="0" name="On collision with another object" sid="819921741867759" type="SPR_J1_ATK_Shot">
+                                    <param id="0" name="Object">TBG_Solid</param>
+                                </condition>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="379880841758163" type="SPR_J1_ATK_Shot" />
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="289844792688374" type="SPR_J1_ATK_Shot">
-                                    <param id="0" name="Angle">0</param>
-                                </action>
+                                <action id="-9" name="Destroy" sid="835896475783019" type="SPR_J1_ATK_Shot" />
                             </actions>
                         </event-block>
                     </sub-events>

@@ -19,6 +19,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -136,10 +137,18 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="625231776000882" speed="5">
+                <animation framecount="1" loop="0" name="TP01" pingpong="0" repeatcount="1" repeatto="0" sid="625231776000882" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="HUD_TXT_PV" sid="650364238754249">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BG_TM_F1" sid="421676017772855">
+            <plugin id="Tilemap" />
+            <texture original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tilemap\tilemap_packed (32x32).png" />
+            <tiles />
         </object-type>
     </object-folder>
     <families />

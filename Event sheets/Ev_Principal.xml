@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Ev_Principal</name>
     <events>
+        <variable comment="0=No 1=Tito 2=Corte" constant="0" name="Var_ATK" sid="891166668075349" static="0" type="number">0</variable>
+        <variable constant="0" name="Var_PV" sid="420106648173722" static="0" type="number">3</variable>
         <variable comment="0=Off 1=On" constant="0" name="Var_Sistema" sid="354363732051479" static="0" type="number">0</variable>
         <include>Ev_Jogador_1</include>
         <event-block sid="379720638947399">
@@ -23,7 +25,11 @@
             <conditions>
                 <condition id="-1" name="Every tick" sid="593725508370089" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Set text" sid="890990913126056" type="HUD_TXT_PV">
+                    <param id="0" name="Text">&quot;PV: &quot; &amp; Var_PV</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

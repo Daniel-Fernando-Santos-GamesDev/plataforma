@@ -13,6 +13,10 @@
                     <param id="0" name="X">64</param>
                     <param id="1" name="Y">160</param>
                 </action>
+                <action id="-9" name="Set value" sid="310226867198493" type="System">
+                    <param id="0" name="Variable">Var_ATK</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
     </events>
