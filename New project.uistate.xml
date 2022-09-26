@@ -10,7 +10,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Fase_1</layout>
+        <layout order="0">Fase_1_1</layout>
         <event-sheet order="1">Ev_F1</event-sheet>
         <event-sheet order="2">Ev_Principal</event-sheet>
         <event-sheet active="1" order="3">Ev_Jogador_1</event-sheet>
@@ -18,7 +18,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <properties>
         <property expanded="1" name="About" />
         <property expanded="1" name="Project settings" />
-        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1" />
@@ -33,5 +33,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/SPR_J1/" />
         <folder expanded="1" path="animation-folder/SPR_J1_ATK_Shot/" />
+        <folder expanded="1" path="animation-folder/BS_SPR_P1/" />
     </folders-expanded>
 </c2uistate>

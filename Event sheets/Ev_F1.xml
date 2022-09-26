@@ -17,6 +17,14 @@
                     <param id="0" name="Variable">Var_ATK</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="-4" name="Set position to another object" sid="616642906006573" type="BS_SPR_P1">
+                    <param id="0" name="Object">SPR_J1</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="869782563549290" type="BS_SPR_P1">
+                    <param id="0" name="Pin to">SPR_J1</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
             </actions>
         </event-block>
     </events>

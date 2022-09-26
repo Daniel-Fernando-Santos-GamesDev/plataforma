@@ -20,6 +20,7 @@
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -28,8 +29,11 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -147,13 +151,72 @@
         </object-type>
         <object-type name="BG_TM_F1" sid="421676017772855">
             <plugin id="Tilemap" />
-            <texture original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tilemap\tilemap_packed (32x32).png" />
+            <texture original-source="C:\Users\yokai\Documents\Daniel\Projetos GitHub\Construct-2\plataforma\Textures\BG_TM_F1.png" />
             <tiles />
+        </object-type>
+        <object-type name="BS_SPR_P1" sid="584418505071171">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="979472824572791">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="424597147734642">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="P1_Parado" pingpong="0" repeatcount="1" repeatto="0" sid="574986101953743" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\000.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\002.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\003.png" />
+                </animation>
+                <animation framecount="2" loop="0" name="P1_Parado_ATK_1" pingpong="0" repeatcount="1" repeatto="0" sid="317784098026770" speed="5">
+                    <frame duration="1" hotspotX="0.25" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.25" hotspotY="1" />
+                </animation>
+                <animation framecount="4" loop="0" name="P1_Parado_ATK_2" pingpong="0" repeatcount="1" repeatto="0" sid="505677260907017" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+                <animation framecount="2" loop="0" name="P1_Andar" pingpong="0" repeatcount="1" repeatto="0" sid="306473923767108" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Andar\000.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Andar\001.png" />
+                </animation>
+                <animation framecount="2" loop="0" name="P1_Andar_ATK" pingpong="0" repeatcount="1" repeatto="0" sid="234497415214768" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Andar_ATK\000.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Andar_ATK\001.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="P1_Pulo" pingpong="0" repeatcount="1" repeatto="0" sid="653712841694209" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+                <animation framecount="1" loop="0" name="P1_Pulo_ATK" pingpong="0" repeatcount="1" repeatto="0" sid="312481745597786" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Pulo_ATK\000.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="P1_Queda" pingpong="0" repeatcount="1" repeatto="0" sid="574797753453147" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Queda\000.png" />
+                </animation>
+                <animation framecount="2" loop="0" name="P1_Derrapar" pingpong="0" repeatcount="1" repeatto="0" sid="502370435069177" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Derrapar\000.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Derrapar\001.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BS_TBG_Plataforma_1" sid="679502027714793">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="935750106825369">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <texture />
         </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Fase_1.xml</layout>
+        <layout>Fase_1_1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Ev_F1.xml</event-sheet>
