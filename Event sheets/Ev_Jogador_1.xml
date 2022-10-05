@@ -97,6 +97,11 @@
                                 <condition id="0" name="On key pressed" sid="435639597110226" type="Keyboard">
                                     <param id="0" name="Key">90</param>
                                 </condition>
+                                <condition id="-14" inverted="1" name="Compare variable" sid="539447867133052" type="System">
+                                    <param id="0" name="Variable">Var_ATK</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="521925866279875" type="Function">
@@ -249,6 +254,18 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="912188334389222">
+                                    <conditions>
+                                        <condition id="1" name="Compare parameter" sid="578111114163949" type="Function">
+                                            <param id="0" name="Index">0</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;JumpTh&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="12" name="Fall through" sid="808935652008324" type="SPR_J1" />
+                                    </actions>
+                                </event-block>
                                 <event-block sid="182513552993177">
                                     <conditions>
                                         <condition id="1" name="Compare parameter" sid="224327974335844" type="Function">
@@ -291,18 +308,10 @@
                                             <param id="0" name="Instance variable">Var_ATK</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="912188334389222">
-                                    <conditions>
-                                        <condition id="1" name="Compare parameter" sid="578111114163949" type="Function">
-                                            <param id="0" name="Index">0</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;JumpTh&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Platform" id="12" name="Fall through" sid="808935652008324" type="SPR_J1" />
+                                        <action id="-13" name="Set boolean" sid="417883875232793" type="BS_SPR_P1">
+                                            <param id="0" name="Instance variable">Var_ATK</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -338,7 +347,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="824722053725909" type="SPR_J1">
+                                        <action id="0" name="Spawn another object" sid="824722053725909" type="BS_SPR_P1">
                                             <param id="0" name="Object">SPR_J1_ATK_Shot</param>
                                             <param id="1" name="Layer">&quot;Base&quot;</param>
                                             <param id="2" name="Image point">1</param>
@@ -400,12 +409,35 @@
                                     <conditions>
                                         <condition behavior="Platform" id="0" name="Is moving" sid="652216749043373" type="SPR_J1" />
                                     </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="548057470816354" type="BS_SPR_P1">
-                                            <param id="0" name="Animation">&quot;P1_Andar&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="482528186422075">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="349653896457815" type="BS_SPR_P1">
+                                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="548057470816354" type="BS_SPR_P1">
+                                                    <param id="0" name="Animation">&quot;P1_Andar&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="888945235328528">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="186137677286270" type="BS_SPR_P1">
+                                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="149017338123810" type="BS_SPR_P1">
+                                                    <param id="0" name="Animation">&quot;P1_Andar_ATK&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="437357535968435">
                                     <conditions>
@@ -413,15 +445,12 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="885756009503586">
+                                        <event-block sid="806157089854533">
                                             <conditions>
-                                                <condition id="2" inverted="1" name="Is playing" sid="345288875211675" type="BS_SPR_P1">
-                                                    <param id="0" name="Animation">&quot;P1_Parado_ATK_1&quot;</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="244493767630310" type="SPR_J1">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="202344536878232" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="930534554451442" type="BS_SPR_P1">
+                                                <condition id="2" inverted="1" name="Is playing" sid="846397326649726" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
                                                 </condition>
                                             </conditions>
@@ -432,14 +461,14 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="417261578590552">
+                                        <event-block sid="669889569287523">
                                             <conditions>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="759136200556728" type="SPR_J1">
+                                                <condition id="-8" name="Is boolean instance variable set" sid="482228196889065" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="957070694198895" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="856798238331613" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_1&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -459,38 +488,137 @@
                                     <conditions>
                                         <condition behavior="Platform" id="3" name="Is jumping" sid="805425554318870" type="SPR_J1" />
                                     </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="932841943613379" type="BS_SPR_P1">
-                                            <param id="0" name="Animation">&quot;P1_Pulo&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="315263206515631">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="618405877678316" type="BS_SPR_P1">
+                                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="932841943613379" type="BS_SPR_P1">
+                                                    <param id="0" name="Animation">&quot;P1_Pulo&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="575817189165875">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="611861908868913" type="BS_SPR_P1">
+                                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="793848102139999" type="BS_SPR_P1">
+                                                    <param id="0" name="Animation">&quot;P1_Pulo_ATK&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="661092990185209">
                                     <conditions>
                                         <condition behavior="Platform" id="4" name="Is falling" sid="886415042077387" type="SPR_J1" />
                                     </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="422123314514778">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="685834461228827" type="BS_SPR_P1">
+                                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="958829479695948" type="BS_SPR_P1">
+                                                    <param id="0" name="Animation">&quot;P1_Queda&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="774432521470351">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="374876606194297" type="BS_SPR_P1">
+                                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="108859503558524" type="BS_SPR_P1">
+                                                    <param id="0" name="Animation">&quot;P1_Queda_ATK&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="249301796088172">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="194875048853455" type="BS_SPR_P1">
+                                    <param id="0" name="Animation">&quot;P1_Parado_ATK_1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="963712140302849" type="BS_SPR_P1">
+                                    <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="729206399434391" type="BS_SPR_P1">
+                                    <param id="0" name="Instance variable">Var_ATK</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="269817017737520">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="613258973840215" type="BS_SPR_P1">
+                                    <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
+                                </condition>
+                                <condition id="4" name="On finished" sid="826478870882514" type="BS_SPR_P1">
+                                    <param id="0" name="Animation">&quot;P1_Pulo_ATK&quot;</param>
+                                </condition>
+                                <condition id="4" name="On finished" sid="660670501651560" type="BS_SPR_P1">
+                                    <param id="0" name="Animation">&quot;P1_Queda_ATK&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="259659509420970">
+                                    <conditions>
+                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="121253577992226" type="SPR_J1" />
+                                    </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="958829479695948" type="BS_SPR_P1">
+                                        <action id="4" name="Set animation" sid="622020575615874" type="BS_SPR_P1">
+                                            <param id="0" name="Animation">&quot;P1_Parado&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="552543602371101">
+                                    <conditions>
+                                        <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="375697120466070" type="SPR_J1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="221834696568882" type="BS_SPR_P1">
+                                            <param id="0" name="Animation">&quot;P1_Pulo&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="859049829279828">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="855624755379726" type="SPR_J1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="485978867112185" type="BS_SPR_P1">
                                             <param id="0" name="Animation">&quot;P1_Queda&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                        <event-block sid="810544094791192">
-                            <conditions>
-                                <condition id="4" name="On finished" sid="378827743629337" type="BS_SPR_P1">
-                                    <param id="0" name="Animation">&quot;P1_Parado_ATK_1&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="975400605812101" type="BS_SPR_P1">
-                                    <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>

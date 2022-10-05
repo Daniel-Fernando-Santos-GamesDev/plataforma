@@ -14,6 +14,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="1">Ev_F1</event-sheet>
         <event-sheet order="2">Ev_Principal</event-sheet>
         <event-sheet active="1" order="3">Ev_Jogador_1</event-sheet>
+        <event-sheet order="4">Ev_</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -25,14 +26,19 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/sistema/" />
+        <folder expanded="1" path="object-folder/Inimigos/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/BS_SPR_EN01/" />
+        <folder expanded="1" path="animation-folder/BS_SPR_Spaw/" />
         <folder expanded="1" path="animation-folder/SPR_J1/" />
         <folder expanded="1" path="animation-folder/SPR_J1_ATK_Shot/" />
         <folder expanded="1" path="animation-folder/BS_SPR_P1/" />
+        <folder expanded="1" path="animation-folder/HUD_SPR_PV/" />
+        <folder expanded="1" path="animation-folder/HUD_SPR_PV_MAX/" />
     </folders-expanded>
 </c2uistate>

@@ -13,7 +13,7 @@
                     <param id="0" name="X">64</param>
                     <param id="1" name="Y">160</param>
                 </action>
-                <action id="-9" name="Set value" sid="310226867198493" type="System">
+                <action disabled="1" id="-9" name="Set value" sid="310226867198493" type="System">
                     <param id="0" name="Variable">Var_ATK</param>
                     <param id="1" name="Value">1</param>
                 </action>
@@ -27,5 +27,284 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="485153376722753" title="Inimigos">
+            <sub-events>
+                <event-block sid="336236557315311">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="890142890391445" type="BS_SPR_Spaw">
+                            <param id="0" name="Object">SPR_J1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="511144449295116" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="633593037961205" type="BS_SPR_Spaw">
+                            <param id="0" name="Instance variable">Var_UID_Ini</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="795492035896933" type="BS_SPR_Spaw">
+                            <param id="0" name="Object">BS_SPR_EN01</param>
+                            <param id="1" name="Layer">&quot;Base&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="326130343430717">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="471310078761653" type="BS_SPR_EN01" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="738261541734981" type="BS_SPR_Spaw">
+                                    <param id="0" name="Instance variable">Var_UID_Ini</param>
+                                    <param id="1" name="Value">BS_SPR_EN01.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="392862870839384">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="672232041643421" type="BS_SPR_EN01" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="433274674485464">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="916859532442659" type="BS_SPR_Spaw">
+                                    <param id="0" name="Instance variable">Var_UID_Ini</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">BS_SPR_EN01.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="894423782335793" type="BS_SPR_Spaw">
+                                    <param id="0" name="Instance variable">Var_UID_Ini</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="862753265196694">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="547401727245068" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_PV</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="130931599830147" type="BS_SPR_EN01" />
+                    </actions>
+                </event-block>
+                <event-block sid="125686035378405">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="666456100883090" type="SPR_J1">
+                            <param id="0" name="Object">BS_SPR_EN01</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="156642760213129" type="SPR_J1">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">BS_SPR_EN01.ImagePointY(&quot;meio&quot;)</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="765228934778590" type="BS_SPR_EN01" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="156987592005388" type="BS_SPR_EN01">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="422315052407697" type="SPR_J1">
+                            <param id="0" name="Vector Y">-300</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="959189323046040" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_PV</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="103032092949406">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="478191618260430" type="SPR_J1_ATK_Shot">
+                            <param id="0" name="Object">BS_SPR_EN01</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="477382342088509" type="BS_SPR_EN01" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="753289501236458" type="BS_SPR_EN01">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="348290699968115" type="SPR_J1_ATK_Shot" />
+                        <action id="-12" name="Subtract from" sid="531876022116712" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_PV</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="399516968594202">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="736339904462504" type="System">
+                            <param id="0" name="Object">BS_SPR_EN01</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="709418495692503">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="333376276701441" type="BS_SPR_EN01">
+                                    <param id="0" name="Object">BS_SPR_P1</param>
+                                </condition>
+                                <condition disabled="1" id="-2" name="Compare Y" sid="890721929199765" type="SPR_J1">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">BS_SPR_EN01.ImagePointY(&quot;meio&quot;)</param>
+                                </condition>
+                                <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="273476827684713" type="BS_SPR_EN01" />
+                                <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="341032009000569" type="BS_SPR_P1" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="684485228782515" type="BS_SPR_P1">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="375589841656646">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="597824425924844" type="System">
+                                            <param id="0" name="Variable">Var_PV</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="765426336354102" type="System">
+                                            <param id="0" name="Variable">Var_PV</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="732266714164749">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="122683409276163" type="BS_SPR_EN01" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="258628046454656">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="846853184088879" type="BS_SPR_EN01">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">SPR_J1.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="336579151166818" type="BS_SPR_EN01">
+                                    <param id="0" name="Instance variable">Var_Direcao</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="374627521886031">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="931975498321809" type="BS_SPR_EN01">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">SPR_J1.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="292231581056819" type="BS_SPR_EN01">
+                                    <param id="0" name="Instance variable">Var_Direcao</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="778212117242767">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="745078809635955" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_Direcao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="901327042013485" type="BS_SPR_EN01">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="787165268767419">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="102808004332707" type="BS_SPR_EN01" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="327584615821365" type="BS_SPR_EN01">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="132143428449095">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="782296238545938" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_Direcao</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="260794113734595" type="BS_SPR_EN01">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="723065748223507">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="433844856507263" type="BS_SPR_EN01" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="574210914850479" type="BS_SPR_EN01">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="378635250973842">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="247901434082272" type="BS_SPR_EN01">
+                            <param id="0" name="Side">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="289813147940941" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_Direcao</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="594139598802778">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="159731627790756" type="BS_SPR_EN01">
+                            <param id="0" name="Side">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="416289729515982" type="BS_SPR_EN01">
+                            <param id="0" name="Instance variable">Var_Direcao</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

@@ -26,8 +26,8 @@
                 <condition id="-1" name="Every tick" sid="593725508370089" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="890990913126056" type="HUD_TXT_PV">
-                    <param id="0" name="Text">&quot;PV: &quot; &amp; Var_PV</param>
+                <action id="5" name="Set frame" sid="155625957535759" type="HUD_SPR_PV">
+                    <param id="0" name="Frame number">Var_PV</param>
                 </action>
             </actions>
         </event-block>

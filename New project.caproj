@@ -30,6 +30,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -99,6 +100,64 @@
                 <plugin id="NodeWebkit" />
             </object-type>
         </object-folder>
+        <object-folder name="Inimigos">
+            <object-type name="BS_SPR_EN01" sid="649569622789684">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="0=parado 1=direita 2=esquerda" name="Var_Direcao" sid="318849701296956" type="number" />
+                    <instance-variable name="Var_PV" sid="732743924874465" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="350824470840845">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="503630750684162">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="Platform" sid="723290771299159">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="568633720160236" speed="2">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tiles\tile_0055.png">
+                            <image-point name="meio" x="0.5" y="0.75" />
+                            <collision-poly>
+                                <point x="0.125" y="0.5625" />
+                                <point x="0.875" y="0.558594" />
+                                <point x="0.875" y="0.996094" />
+                                <point x="0.125" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\01 Plataforma\pixel-line-platformer\Tiles\tile_0056.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.75" />
+                            <collision-poly>
+                                <point x="0.125" y="0.5625" />
+                                <point x="0.875" y="0.558594" />
+                                <point x="0.875" y="0.996094" />
+                                <point x="0.125" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BS_SPR_Spaw" sid="750560737225318">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Var_UID_Ini" sid="957913706973550" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="LineOfSight" sid="742902365049551">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="447595104340585" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="SPR_J1" sid="565543305224255">
             <plugin id="Sprite" />
             <instance-variables>
@@ -144,9 +203,19 @@
                 <animation framecount="1" loop="0" name="TP01" pingpong="0" repeatcount="1" repeatto="0" sid="625231776000882" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
+                <animation framecount="1" loop="0" name="TP02" pingpong="0" repeatcount="1" repeatto="0" sid="967514941241055" speed="5">
+                    <frame duration="1" hotspotX="0.375" hotspotY="0.5" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_Trio\Animation2\000.png">
+                        <collision-poly>
+                            <point x="0.0625" y="0.3125" />
+                            <point x="0.875" y="0.3125" />
+                            <point x="0.875" y="0.6875" />
+                            <point x="0.0625" y="0.6875" />
+                        </collision-poly>
+                    </frame>
+                </animation>
             </animation-folder>
         </object-type>
-        <object-type name="HUD_TXT_PV" sid="650364238754249">
+        <object-type name="PS_TXT" sid="650364238754249">
             <plugin id="Text" />
         </object-type>
         <object-type name="BG_TM_F1" sid="421676017772855">
@@ -156,6 +225,9 @@
         </object-type>
         <object-type name="BS_SPR_P1" sid="584418505071171">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Var_ATK" sid="246193047004053" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="979472824572791">
                     <behavior id="Pin" />
@@ -165,42 +237,232 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="4" loop="0" name="P1_Parado" pingpong="0" repeatcount="1" repeatto="0" sid="574986101953743" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\000.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\001.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\002.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\003.png" />
+                <animation framecount="6" loop="0" name="P1_Parado" pingpong="0" repeatcount="1" repeatto="0" sid="574986101953743" speed="5">
+                    <frame duration="2" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\000.png">
+                        <image-point name="ATK" x="1.03125" y="0.625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\001.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\002.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Paradaro\003.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="2" loop="0" name="P1_Parado_ATK_1" pingpong="0" repeatcount="1" repeatto="0" sid="317784098026770" speed="5">
-                    <frame duration="1" hotspotX="0.25" hotspotY="1" />
-                    <frame duration="1" hotspotX="0.25" hotspotY="1" />
+                <animation framecount="2" loop="0" name="P1_Parado_ATK_1" pingpong="0" repeatcount="1" repeatto="0" sid="474267813921338" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="0.9375" y="0.6875" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="0.9375" y="0.6875" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="4" loop="0" name="P1_Parado_ATK_2" pingpong="0" repeatcount="1" repeatto="0" sid="505677260907017" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                <animation framecount="3" loop="0" name="P1_Parado_ATK_2" pingpong="0" repeatcount="1" repeatto="0" sid="505677260907017" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1" y="0.71875" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1" y="0.71875" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1" y="0.71875" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="2" loop="0" name="P1_Andar" pingpong="0" repeatcount="1" repeatto="0" sid="306473923767108" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Andar\000.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Andar\001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Andar\000.png">
+                        <image-point name="ATK" x="0.5625" y="0.625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Andar\001.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="2" loop="0" name="P1_Andar_ATK" pingpong="0" repeatcount="1" repeatto="0" sid="234497415214768" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Andar_ATK\000.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Andar_ATK\001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Andar_ATK\000.png">
+                        <image-point name="ATK" x="1" y="0.5625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Andar_ATK\001.png">
+                        <image-point name="ATK" x="1.03125" y="0.6875" />
+                        <collision-poly>
+                            <point x="0.25" y="0.3125" />
+                            <point x="0.75" y="0.3125" />
+                            <point x="0.75" y="1" />
+                            <point x="0.25" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="P1_Pulo" pingpong="0" repeatcount="1" repeatto="0" sid="653712841694209" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="0.5625" y="0.625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="1" loop="0" name="P1_Pulo_ATK" pingpong="0" repeatcount="1" repeatto="0" sid="312481745597786" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Pulo_ATK\000.png" />
+                <animation framecount="2" loop="0" name="P1_Pulo_ATK" pingpong="0" repeatcount="1" repeatto="0" sid="312481745597786" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto B\Animations\BS_SPR_J1\J1_Pulo_ATK\000.png">
+                        <image-point name="ATK" x="1" y="0.5625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.125" />
+                            <point x="0.75" y="0.125" />
+                            <point x="0.75" y="0.8125" />
+                            <point x="0.25" y="0.8125" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1" y="0.5625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.125" />
+                            <point x="0.75" y="0.125" />
+                            <point x="0.75" y="0.8125" />
+                            <point x="0.25" y="0.8125" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="P1_Queda" pingpong="0" repeatcount="1" repeatto="0" sid="574797753453147" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Queda\000.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Queda\000.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="P1_Queda_ATK" pingpong="0" repeatcount="1" repeatto="0" sid="722831970238002" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1" y="0.5625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1">
+                        <image-point name="ATK" x="1" y="0.5625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="2" loop="0" name="P1_Derrapar" pingpong="0" repeatcount="1" repeatto="0" sid="502370435069177" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Derrapar\000.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Derrapar\001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Derrapar\000.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto C\Animations\J1_SPR_Personagem_1\J1_Derrapar\001.png">
+                        <image-point name="ATK" x="0.5625" y="0.65625" />
+                        <collision-poly>
+                            <point x="0.25" y="0.15625" />
+                            <point x="0.75" y="0.15625" />
+                            <point x="0.75" y="0.84375" />
+                            <point x="0.25" y="0.84375" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -213,6 +475,38 @@
             </behaviors>
             <texture />
         </object-type>
+        <object-type name="HUD_SPR_PV" sid="732948090249569">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="959535189404140" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\000.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\001.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\002.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\003.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\004.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\005.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV\Fase_1\006.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HUD_SPR_PV_MAX" sid="844063971414841">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192256349060917" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\000.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\001.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\002.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\003.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\004.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\005.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Animations\HUD_SPR_PV_MAX\Fase_1\006.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PS_TBG_TelaPreta" sid="256508984345546">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -222,6 +516,7 @@
         <event-sheet>Ev_F1.xml</event-sheet>
         <event-sheet>Ev_Jogador_1.xml</event-sheet>
         <event-sheet>Ev_Principal.xml</event-sheet>
+        <event-sheet>Ev_.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
