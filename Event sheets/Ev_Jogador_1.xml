@@ -3,9 +3,216 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Ev_Jogador_1</name>
     <events>
-        <event-block sid="471611091921231">
+        <event-group description="" sid="250585134929052" title="Teclado">
+            <sub-events>
+                <event-block sid="299227418235331">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="945097136476138" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="184098156501455" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="369748599267584" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Dir&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="771962479592174">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Key is down" sid="705952186140378" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="196285366547136" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="772590782773541" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Esq&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="919706105194507">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="396873756373894" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="644788613493707" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;JumpTh&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="202437418428342">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="705584295619825" type="Keyboard">
+                            <param id="0" name="Key">88</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="922401911033192" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="498540388932131" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Pulo&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="966164472487049">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="319099236729476" type="Keyboard">
+                            <param id="0" name="Key">88</param>
+                        </condition>
+                        <condition id="3" name="On key released" sid="332894405291860" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="613009006185313" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Pulo_S&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="183213423070297">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="731139602564838" type="Keyboard">
+                            <param id="0" name="Key">90</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="758108429624972" type="System">
+                            <param id="0" name="Variable">Var_ATK</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="860122593232747" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;ATK&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="977089782762080">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="923119527148727" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="260448073242030" type="Function">
+                            <param id="0" name="Name">&quot;Pause&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Pause&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="806746156545439" title="Controle">
+            <sub-events>
+                <event-block sid="567099290513644">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="701415758573590" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
+                        </condition>
+                        <condition id="3" inverted="1" name="Is button down" sid="303523435176112" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">14</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="863137004406226" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Dir&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="240540283355490">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Is button down" sid="635044843951870" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="249887963864679" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">14</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="807555730138372" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Esq&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="342268602909726">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="282415271426023" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="276204721384520" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="257025812060262" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Pulo&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="249771717693845">
+                    <conditions>
+                        <condition id="7" name="On button released" sid="966510095124402" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="7" name="On button released" sid="399166253645585" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="386384046391479" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;Pulo_S&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="129168331354307">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="632844666361846" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">2</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="326359856010374" type="System">
+                            <param id="0" name="Variable">Var_ATK</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="909550530756814" type="Function">
+                            <param id="0" name="Name">&quot;Mover&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;ATK&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="675387655769449">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="592165869529780" type="System">
+                <condition id="-14" name="Compare variable" sid="966694566535264" type="System">
                     <param id="0" name="Variable">Var_Sistema</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
@@ -13,302 +220,135 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-group description="" sid="496537529776831" title="Teclado">
+                <event-group description="" sid="675246871402826" title="Funcao">
                     <sub-events>
-                        <event-block sid="571417918577785">
+                        <event-block sid="606498304900325">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="501378017328884" type="Keyboard">
-                                    <param id="0" name="Key">39</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Key is down" sid="187654386099215" type="Keyboard">
-                                    <param id="0" name="Key">37</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="905199689114258" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Dir&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="314142548821409">
-                            <conditions>
-                                <condition id="2" inverted="1" name="Key is down" sid="598887797621969" type="Keyboard">
-                                    <param id="0" name="Key">39</param>
-                                </condition>
-                                <condition id="2" name="Key is down" sid="799211755784655" type="Keyboard">
-                                    <param id="0" name="Key">37</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="533846485425568" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Esq&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="898962576070319">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="863502583285477" type="Keyboard">
-                                    <param id="0" name="Key">40</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="822890235199108" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;JumpTh&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block any="1" sid="846504967944538">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="315617323158138" type="Keyboard">
-                                    <param id="0" name="Key">88</param>
-                                </condition>
-                                <condition id="0" name="On key pressed" sid="158998038046262" type="Keyboard">
-                                    <param id="0" name="Key">38</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="112304948200108" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Pulo&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block any="1" sid="815042998825067">
-                            <conditions>
-                                <condition id="3" name="On key released" sid="297817778543474" type="Keyboard">
-                                    <param id="0" name="Key">88</param>
-                                </condition>
-                                <condition id="3" name="On key released" sid="405078725737554" type="Keyboard">
-                                    <param id="0" name="Key">38</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="957751022427633" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Pulo_S&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="533434517510253">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="435639597110226" type="Keyboard">
-                                    <param id="0" name="Key">90</param>
-                                </condition>
-                                <condition id="-14" inverted="1" name="Compare variable" sid="539447867133052" type="System">
-                                    <param id="0" name="Variable">Var_ATK</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="521925866279875" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;ATK&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="" sid="162206839862552" title="Controle">
-                    <sub-events>
-                        <event-block sid="623638497511554">
-                            <conditions>
-                                <condition id="3" name="Is button down" sid="795954017652714" type="Gamepad">
-                                    <param id="0" name="Gamepad">0</param>
-                                    <param id="1" name="Button">15</param>
-                                </condition>
-                                <condition id="3" inverted="1" name="Is button down" sid="968689275113021" type="Gamepad">
-                                    <param id="0" name="Gamepad">0</param>
-                                    <param id="1" name="Button">14</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="259901388383147" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Dir&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="461331726786821">
-                            <conditions>
-                                <condition id="3" inverted="1" name="Is button down" sid="268414379171902" type="Gamepad">
-                                    <param id="0" name="Gamepad">0</param>
-                                    <param id="1" name="Button">15</param>
-                                </condition>
-                                <condition id="3" name="Is button down" sid="618440567480170" type="Gamepad">
-                                    <param id="0" name="Gamepad">0</param>
-                                    <param id="1" name="Button">14</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="333306051010857" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Esq&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="366556447206291">
-                            <conditions>
-                                <condition id="6" name="On button pressed" sid="385675573889497" type="Gamepad">
-                                    <param id="0" name="Gamepad">0</param>
-                                    <param id="1" name="Button">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="584162901534432" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Pulo&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="981348714339445">
-                            <conditions>
-                                <condition id="7" name="On button released" sid="101964786878076" type="Gamepad">
-                                    <param id="0" name="Gamepad">0</param>
-                                    <param id="1" name="Button">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="910206939385216" type="Function">
-                                    <param id="0" name="Name">&quot;Mover&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;Pulo_S&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="" sid="727399098195401" title="Funcao">
-                    <sub-events>
-                        <event-block sid="618636928682426">
-                            <conditions>
-                                <condition id="0" name="On function" sid="543813380886395" type="Function">
+                                <condition id="0" name="On function" sid="957212052704923" type="Function">
                                     <param id="0" name="Name">&quot;Mover&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="136006099167704">
+                                <event-block sid="530287261093698">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="356794554092067" type="Function">
+                                        <condition id="1" name="Compare parameter" sid="136142760561355" type="Function">
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Dir&quot;</param>
                                         </condition>
-                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="874880774969958" type="SPR_J1">
+                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="246948945210587" type="SPR_J1">
                                             <param id="0" name="Side">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="7" name="Simulate control" sid="286354660655956" type="SPR_J1">
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="165185018161581" type="SPR_J1">
                                             <param id="0" name="Control">1</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="580475535844960">
+                                        <event-block sid="555862298664818">
                                             <conditions>
-                                                <condition id="7" name="Is mirrored" sid="617526738903602" type="SPR_J1" />
+                                                <condition id="7" name="Is mirrored" sid="924643921915288" type="SPR_J1" />
                                             </conditions>
                                             <actions>
-                                                <action id="7" name="Set mirrored" sid="534121591197782" type="SPR_J1">
+                                                <action id="7" name="Set mirrored" sid="684189984209671" type="SPR_J1">
                                                     <param id="0" name="State">1</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="879971534927070" type="BS_SPR_P1">
+                                                <action id="7" name="Set mirrored" sid="247627792790823" type="BS_SPR_P1">
                                                     <param id="0" name="State">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="403237115135000">
+                                <event-block sid="282202619337025">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="474736820395363" type="Function">
+                                        <condition id="1" name="Compare parameter" sid="823868700143513" type="Function">
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Esq&quot;</param>
                                         </condition>
-                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="248056695360531" type="SPR_J1">
+                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="245377306104779" type="SPR_J1">
                                             <param id="0" name="Side">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="7" name="Simulate control" sid="577457190570135" type="SPR_J1">
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="625749525134339" type="SPR_J1">
                                             <param id="0" name="Control">0</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="512865562118369">
+                                        <event-block sid="170492592137215">
                                             <conditions>
-                                                <condition id="7" inverted="1" name="Is mirrored" sid="879000586116480" type="SPR_J1" />
+                                                <condition id="7" inverted="1" name="Is mirrored" sid="155182521679125" type="SPR_J1" />
                                             </conditions>
                                             <actions>
-                                                <action id="7" name="Set mirrored" sid="896141554056134" type="SPR_J1">
+                                                <action id="7" name="Set mirrored" sid="361630275204896" type="SPR_J1">
                                                     <param id="0" name="State">0</param>
                                                 </action>
-                                                <action id="7" name="Set mirrored" sid="979445067229799" type="BS_SPR_P1">
+                                                <action id="7" name="Set mirrored" sid="773847709241372" type="BS_SPR_P1">
                                                     <param id="0" name="State">0</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="912188334389222">
+                                <event-block sid="237846803707533">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="578111114163949" type="Function">
+                                        <condition id="1" name="Compare parameter" sid="600540811266364" type="Function">
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;JumpTh&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="12" name="Fall through" sid="808935652008324" type="SPR_J1" />
+                                        <action behavior="Platform" id="12" name="Fall through" sid="181610223412337" type="SPR_J1" />
                                     </actions>
                                 </event-block>
-                                <event-block sid="182513552993177">
+                                <event-block sid="260545716391722">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="224327974335844" type="Function">
+                                        <condition id="1" name="Compare parameter" sid="459449194632019" type="Function">
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Pulo&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="7" name="Simulate control" sid="513261484236462" type="SPR_J1">
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="954257466872933" type="SPR_J1">
                                             <param id="0" name="Control">2</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="110730454736012">
+                                <event-block sid="753928644668412">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="288591737950379" type="Function">
+                                        <condition id="1" name="Compare parameter" sid="739281419634680" type="Function">
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Pulo_S&quot;</param>
                                         </condition>
-                                        <condition behavior="Platform" id="3" name="Is jumping" sid="110154004066009" type="SPR_J1" />
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="474224169310056" type="SPR_J1" />
                                     </conditions>
                                     <actions>
-                                        <action behavior="Platform" id="9" name="Set vector Y" sid="455172593370689" type="SPR_J1">
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="106664717317601" type="SPR_J1">
                                             <param id="0" name="Vector Y">0.0001</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="940824540867922">
+                                <event-block sid="451134684573314">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="585927351579046" type="Function">
+                                        <condition id="1" name="Compare parameter" sid="778557919490764" type="Function">
                                             <param id="0" name="Index">0</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;ATK&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-13" name="Set boolean" sid="929111040898331" type="SPR_J1">
+                                        <action id="-13" name="Set boolean" sid="959535219808772" type="SPR_J1">
                                             <param id="0" name="Instance variable">Var_ATK</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-13" name="Set boolean" sid="417883875232793" type="BS_SPR_P1">
+                                        <action id="-13" name="Set boolean" sid="335460957856585" type="BS_SPR_P1">
                                             <param id="0" name="Instance variable">Var_ATK</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -318,36 +358,36 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="611953751008927" title="Acoes">
+                <event-group description="" sid="251655845420898" title="Acoes">
                     <sub-events>
                         <comment>ATK - Tiro</comment>
-                        <event-block sid="886980079321484">
+                        <event-block sid="512687378566599">
                             <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="610248717090776" type="SPR_J1">
+                                <condition id="-8" name="Is boolean instance variable set" sid="509898129848161" type="SPR_J1">
                                     <param id="0" name="Instance variable">Var_ATK</param>
                                 </condition>
-                                <condition id="-4" name="Trigger once while true" sid="504124960034453" type="System" />
+                                <condition id="-4" name="Trigger once while true" sid="236025197297774" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-16" name="Wait" sid="684318624162657" type="System">
+                                <action id="-16" name="Wait" sid="288503114414775" type="System">
                                     <param id="0" name="Seconds">0.001</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="359234865181478" type="SPR_J1">
+                                <action id="-13" name="Set boolean" sid="794587373007417" type="SPR_J1">
                                     <param id="0" name="Instance variable">Var_ATK</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="808145969900871">
+                                <event-block sid="393664063800992">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="618939540559278" type="System">
+                                        <condition id="-14" name="Compare variable" sid="775074798090610" type="System">
                                             <param id="0" name="Variable">Var_ATK</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Spawn another object" sid="824722053725909" type="BS_SPR_P1">
+                                        <action id="0" name="Spawn another object" sid="408768468248750" type="BS_SPR_P1">
                                             <param id="0" name="Object">SPR_J1_ATK_Shot</param>
                                             <param id="1" name="Layer">&quot;Base&quot;</param>
                                             <param id="2" name="Image point">1</param>
@@ -357,81 +397,81 @@
                             </sub-events>
                         </event-block>
                         <comment>direcao do disparo - direita</comment>
-                        <event-block sid="129312745935678">
+                        <event-block sid="990136079365236">
                             <conditions>
-                                <condition id="-18" name="On created" sid="943081189371543" type="SPR_J1_ATK_Shot" />
-                                <condition id="7" inverted="1" name="Is mirrored" sid="407717416596691" type="SPR_J1" />
+                                <condition id="-18" name="On created" sid="855488299301214" type="SPR_J1_ATK_Shot" />
+                                <condition id="7" inverted="1" name="Is mirrored" sid="929697373593208" type="SPR_J1" />
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="289844792688374" type="SPR_J1_ATK_Shot">
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="730703153559835" type="SPR_J1_ATK_Shot">
                                     <param id="0" name="Angle">0</param>
                                 </action>
                             </actions>
                         </event-block>
                         <comment>direcao do disparo - esquerda</comment>
-                        <event-block sid="250337013277051">
+                        <event-block sid="475755615539605">
                             <conditions>
-                                <condition id="-18" name="On created" sid="157229614778871" type="SPR_J1_ATK_Shot" />
-                                <condition id="7" name="Is mirrored" sid="417451052303572" type="SPR_J1" />
+                                <condition id="-18" name="On created" sid="226207181360148" type="SPR_J1_ATK_Shot" />
+                                <condition id="7" name="Is mirrored" sid="431807868113466" type="SPR_J1" />
                             </conditions>
                             <actions>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="927550152086367" type="SPR_J1_ATK_Shot">
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="852202438130371" type="SPR_J1_ATK_Shot">
                                     <param id="0" name="Angle">180</param>
                                 </action>
                             </actions>
                         </event-block>
                         <comment>destruir disparo</comment>
-                        <event-block any="1" sid="782315228593674">
+                        <event-block any="1" sid="599768026784035">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="212724636743166" type="SPR_J1_ATK_Shot">
+                                <condition id="1" name="Is overlapping another object" sid="312517820124841" type="SPR_J1_ATK_Shot">
                                     <param id="0" name="Object">TBG_Solid</param>
                                 </condition>
-                                <condition id="0" name="On collision with another object" sid="819921741867759" type="SPR_J1_ATK_Shot">
+                                <condition id="0" name="On collision with another object" sid="479291267345623" type="SPR_J1_ATK_Shot">
                                     <param id="0" name="Object">TBG_Solid</param>
                                 </condition>
-                                <condition id="-3" inverted="1" name="Is on-screen" sid="379880841758163" type="SPR_J1_ATK_Shot" />
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="950983191204612" type="SPR_J1_ATK_Shot" />
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="835896475783019" type="SPR_J1_ATK_Shot" />
+                                <action id="-9" name="Destroy" sid="173144191684467" type="SPR_J1_ATK_Shot" />
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="263511870023342" title="Animacoes Personagem">
+                <event-group description="" sid="138751293919938" title="Animacoes Personagem">
                     <sub-events>
-                        <event-block sid="991810515983027">
+                        <event-block sid="209750693999004">
                             <conditions>
-                                <condition behavior="Platform" id="2" name="Is on floor" sid="329382461969722" type="SPR_J1" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="680863384166297" type="SPR_J1" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="323867191450134">
+                                <event-block sid="938086699883171">
                                     <conditions>
-                                        <condition behavior="Platform" id="0" name="Is moving" sid="652216749043373" type="SPR_J1" />
+                                        <condition behavior="Platform" id="0" name="Is moving" sid="603400378636859" type="SPR_J1" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="482528186422075">
+                                        <event-block sid="683758525064110">
                                             <conditions>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="349653896457815" type="BS_SPR_P1">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="645964629695234" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="548057470816354" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="978647985455622" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Andar&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="888945235328528">
+                                        <event-block sid="422953585611185">
                                             <conditions>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="186137677286270" type="BS_SPR_P1">
+                                                <condition id="-8" name="Is boolean instance variable set" sid="901631467940386" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="149017338123810" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="161219192694758" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Andar_ATK&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -439,36 +479,36 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="437357535968435">
+                                <event-block sid="705365899577902">
                                     <conditions>
-                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="755523239373876" type="SPR_J1" />
+                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="517410030918059" type="SPR_J1" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="806157089854533">
+                                        <event-block sid="443088292095919">
                                             <conditions>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="202344536878232" type="BS_SPR_P1">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="176324407748429" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="846397326649726" type="BS_SPR_P1">
+                                                <condition id="2" inverted="1" name="Is playing" sid="435204554878775" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="973851273920411" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="551173960899721" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Parado&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="669889569287523">
+                                        <event-block sid="313672581102252">
                                             <conditions>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="482228196889065" type="BS_SPR_P1">
+                                                <condition id="-8" name="Is boolean instance variable set" sid="861034599093589" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="856798238331613" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="763411783640193" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_1&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -478,39 +518,39 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="275326116052256">
+                        <event-block sid="399584861828401">
                             <conditions>
-                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="989376391716979" type="SPR_J1" />
+                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="551304255985862" type="SPR_J1" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="970418296331355">
+                                <event-block sid="495278294162877">
                                     <conditions>
-                                        <condition behavior="Platform" id="3" name="Is jumping" sid="805425554318870" type="SPR_J1" />
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="238290429111636" type="SPR_J1" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="315263206515631">
+                                        <event-block sid="148191247983728">
                                             <conditions>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="618405877678316" type="BS_SPR_P1">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="197971340989791" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="932841943613379" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="883191744297920" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Pulo&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="575817189165875">
+                                        <event-block sid="607626792873702">
                                             <conditions>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="611861908868913" type="BS_SPR_P1">
+                                                <condition id="-8" name="Is boolean instance variable set" sid="140874247063302" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="793848102139999" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="978856494924773" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Pulo_ATK&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -518,33 +558,33 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="661092990185209">
+                                <event-block sid="153434771291392">
                                     <conditions>
-                                        <condition behavior="Platform" id="4" name="Is falling" sid="886415042077387" type="SPR_J1" />
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="810459014813202" type="SPR_J1" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="422123314514778">
+                                        <event-block sid="166099828951820">
                                             <conditions>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="685834461228827" type="BS_SPR_P1">
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="162230662307193" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="958829479695948" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="554725504663397" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Queda&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="774432521470351">
+                                        <event-block sid="440526404718142">
                                             <conditions>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="374876606194297" type="BS_SPR_P1">
+                                                <condition id="-8" name="Is boolean instance variable set" sid="868538661327895" type="BS_SPR_P1">
                                                     <param id="0" name="Instance variable">Var_ATK</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="108859503558524" type="BS_SPR_P1">
+                                                <action id="4" name="Set animation" sid="337387110974951" type="BS_SPR_P1">
                                                     <param id="0" name="Animation">&quot;P1_Queda_ATK&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -554,65 +594,65 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="249301796088172">
+                        <event-block sid="214093523170288">
                             <conditions>
-                                <condition id="4" name="On finished" sid="194875048853455" type="BS_SPR_P1">
+                                <condition id="4" name="On finished" sid="277844660234635" type="BS_SPR_P1">
                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_1&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="963712140302849" type="BS_SPR_P1">
+                                <action id="4" name="Set animation" sid="352661669164618" type="BS_SPR_P1">
                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="729206399434391" type="BS_SPR_P1">
+                                <action id="-13" name="Set boolean" sid="180547245344226" type="BS_SPR_P1">
                                     <param id="0" name="Instance variable">Var_ATK</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block any="1" sid="269817017737520">
+                        <event-block any="1" sid="239836942299427">
                             <conditions>
-                                <condition id="4" name="On finished" sid="613258973840215" type="BS_SPR_P1">
+                                <condition id="4" name="On finished" sid="498989936067272" type="BS_SPR_P1">
                                     <param id="0" name="Animation">&quot;P1_Parado_ATK_2&quot;</param>
                                 </condition>
-                                <condition id="4" name="On finished" sid="826478870882514" type="BS_SPR_P1">
+                                <condition id="4" name="On finished" sid="210784847982554" type="BS_SPR_P1">
                                     <param id="0" name="Animation">&quot;P1_Pulo_ATK&quot;</param>
                                 </condition>
-                                <condition id="4" name="On finished" sid="660670501651560" type="BS_SPR_P1">
+                                <condition id="4" name="On finished" sid="269560422878148" type="BS_SPR_P1">
                                     <param id="0" name="Animation">&quot;P1_Queda_ATK&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="259659509420970">
+                                <event-block sid="529309550355508">
                                     <conditions>
-                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="121253577992226" type="SPR_J1" />
+                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="462467133240176" type="SPR_J1" />
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="622020575615874" type="BS_SPR_P1">
+                                        <action id="4" name="Set animation" sid="455991030732445" type="BS_SPR_P1">
                                             <param id="0" name="Animation">&quot;P1_Parado&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="552543602371101">
+                                <event-block sid="664182895208406">
                                     <conditions>
-                                        <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="375697120466070" type="SPR_J1" />
+                                        <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="947207281005758" type="SPR_J1" />
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="221834696568882" type="BS_SPR_P1">
+                                        <action id="4" name="Set animation" sid="154198147514635" type="BS_SPR_P1">
                                             <param id="0" name="Animation">&quot;P1_Pulo&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="859049829279828">
+                                <event-block sid="478413347522496">
                                     <conditions>
-                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="855624755379726" type="SPR_J1" />
+                                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="164104640901353" type="SPR_J1" />
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="485978867112185" type="BS_SPR_P1">
+                                        <action id="4" name="Set animation" sid="937961875051740" type="BS_SPR_P1">
                                             <param id="0" name="Animation">&quot;P1_Queda&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>

@@ -19,6 +19,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
@@ -29,6 +30,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
@@ -158,6 +160,57 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="Inicio">
+            <object-type name="SPR_Kenney" sid="269553389200083">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="107253564348789">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                    <behavior-type name="Fade2" sid="514303911431462">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="738313292832854" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Kenney\logo_kga1.png">
+                            <collision-poly>
+                                <point x="0.263492" y="0.332" />
+                                <point x="0.498413" y="0.304" />
+                                <point x="0.733333" y="0.336" />
+                                <point x="0.834921" y="0.5" />
+                                <point x="0.771429" y="0.712" />
+                                <point x="0.498413" y="0.676" />
+                                <point x="0.228571" y="0.712" />
+                                <point x="0.168254" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PS_TXT" sid="650364238754249">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="SPF_TXT" sid="784903846433367">
+                <plugin id="Spritefont2" />
+                <instance-variables>
+                    <instance-variable name="Var_TXT" sid="781930128412095" type="string" />
+                </instance-variables>
+                <texture original-source="C:\Users\yokai\Saved Games\00000000000000000 extra\Construct 2\Projeto A\Textures\HUD_SPR_F_Text_Start.png" />
+            </object-type>
+            <object-type name="TBG_Tela_Preto" sid="505370876616961">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="771317178120617">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                    <behavior-type name="Fade2" sid="834300200667928">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+        </object-folder>
         <object-type name="SPR_J1" sid="565543305224255">
             <plugin id="Sprite" />
             <instance-variables>
@@ -214,9 +267,6 @@
                     </frame>
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type name="PS_TXT" sid="650364238754249">
-            <plugin id="Text" />
         </object-type>
         <object-type name="BG_TM_F1" sid="421676017772855">
             <plugin id="Tilemap" />
@@ -510,13 +560,15 @@
     </object-folder>
     <families />
     <layout-folder>
+        <layout>Inicio.xml</layout>
         <layout>Fase_1_1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Ev_F1.xml</event-sheet>
         <event-sheet>Ev_Jogador_1.xml</event-sheet>
         <event-sheet>Ev_Principal.xml</event-sheet>
-        <event-sheet>Ev_.xml</event-sheet>
+        <event-sheet>Ev_Pause.xml</event-sheet>
+        <event-sheet>Ev_Inicio.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />

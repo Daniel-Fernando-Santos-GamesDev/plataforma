@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Ev_Inicio</name>
+    <events>
+        <event-block sid="380741354152445">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="539318570379090" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="407438863002191" type="TBG_Tela_Preto" />
+                <action behavior="Fade" id="1" name="Start fade" sid="941693381722594" type="SPR_Kenney" />
+            </actions>
+            <sub-events>
+                <event-block sid="848899020203286">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="681650376169345" type="SPF_TXT">
+                            <param id="0" name="Instance variable">Var_TXT</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;nome&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="750597046215223" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;Daniel Fernando GameDev 2022 Ver.: &quot; &amp; projectversion</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="527537006349605">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="683656549789059" type="SPF_TXT">
+                            <param id="0" name="Instance variable">Var_TXT</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;menu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="243940145315650" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;Aperte Start/Enter&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="389155536188484">
+            <conditions>
+                <condition id="0" name="Compare text" sid="569823121079504" type="SPF_TXT">
+                    <param id="0" name="Text to compare">&quot;Aperte Start/Enter&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="112853731772893" type="SPF_TXT">
+                    <param id="0" name="Instance variable">Var_TXT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;menu&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="665822459056854" type="SPF_TXT" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="241036287087279" type="System">
+                    <param id="0" name="Seconds">0.8</param>
+                </action>
+                <action id="-15" name="Set visible" sid="460144239478150" type="SPF_TXT">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="388807884647627">
+            <conditions>
+                <condition id="0" name="Compare text" sid="957935420682002" type="SPF_TXT">
+                    <param id="0" name="Text to compare">&quot;Aperte Start/Enter&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="319471257298089" type="SPF_TXT">
+                    <param id="0" name="Instance variable">Var_TXT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;menu&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="602617938660960" type="SPF_TXT" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="305639803451076" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-15" name="Set visible" sid="728804651451731" type="SPF_TXT">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="584498783043961">
+            <conditions>
+                <condition id="0" name="Compare text" sid="317225549827494" type="SPF_TXT">
+                    <param id="0" name="Text to compare">&quot;Aperte Start/Enter&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="309451939762564" type="SPF_TXT">
+                    <param id="0" name="Instance variable">Var_TXT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;menu&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="890511197291151">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="241558915506329" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="747422233354102" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="711757878542596" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;&gt;&gt; Inicio &lt;&lt;&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="959940517853672" type="SPF_TXT">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="127212533224782" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="586773490461897">
+            <conditions>
+                <condition id="0" name="Compare text" sid="106899268276198" type="SPF_TXT">
+                    <param id="0" name="Text to compare">&quot;&gt;&gt; Inicio &lt;&lt;&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="844686552310016" type="SPF_TXT">
+                    <param id="0" name="Instance variable">Var_TXT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;menu&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="176591233788400" type="SPF_TXT">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="331154743146602">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="731493136486599" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="428411658870325" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade2" id="1" name="Start fade" sid="694465615819547" type="TBG_Tela_Preto" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="408425152896070">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="904448895976703" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="822605573336225" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="826340937234070" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="513616506816152" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;Inicio&quot; &amp; newline &amp; &quot;&gt;&gt; Continue &lt;&lt;&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="596418854565322" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="685312185523071">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="997401393515474" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="882260298797460" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="136609614127658" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="774361821785798" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;Inicio&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;&gt;&gt; Creditos &lt;&lt;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="489737715587226" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="674309575487119">
+            <conditions>
+                <condition id="0" name="Compare text" sid="527546604731479" type="SPF_TXT">
+                    <param id="0" name="Text to compare">&quot;Inicio&quot; &amp; newline &amp; &quot;&gt;&gt; Continue &lt;&lt;&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="942260235415969" type="SPF_TXT">
+                    <param id="0" name="Instance variable">Var_TXT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;menu&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="352504971524523" type="SPF_TXT">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="330184948180150">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="191438365978309" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="317303513542060" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block any="1" sid="383613272551693">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="292626792534339" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="514059162970711" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="652587590648464" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="328471457471517" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;Inicio&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;&gt;&gt; Creditos &lt;&lt;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="301656397762565" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="415058264169126">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="483667808343343" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="426970586403421" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="285380543648305" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="166576873276288" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;&gt;&gt; Inicio &lt;&lt;&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="564179597347967" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="394803933736266">
+            <conditions>
+                <condition id="0" name="Compare text" sid="495670178437089" type="SPF_TXT">
+                    <param id="0" name="Text to compare">&quot;Inicio&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;&gt;&gt; Creditos &lt;&lt;&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="171829033827948" type="SPF_TXT">
+                    <param id="0" name="Instance variable">Var_TXT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;menu&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="389904785772856" type="SPF_TXT">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="121695636036876">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="813080580502066" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="964066837163076" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block any="1" sid="379500340401132">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="463195533509033" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="769302606312135" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="992681666720037" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="727507425017999" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;&gt;&gt; Inicio &lt;&lt;&quot; &amp; newline &amp; &quot;Continue&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="333493844364783" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="890965959918068">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="961163354795510" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="168971198908370" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="317861074468357" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="0" name="Set text" sid="363516229044863" type="SPF_TXT">
+                            <param id="0" name="Text">&quot;Inicio&quot; &amp; newline &amp; &quot;&gt;&gt; Continue &lt;&lt;&quot; &amp; newline &amp; &quot;Creditos&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="793432483957036" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Ev_Pause</name>
+    <events>
+        <event-block sid="504286882252570">
+            <conditions>
+                <condition id="0" name="On function" sid="802617403381472" type="Function">
+                    <param id="0" name="Name">&quot;Pause&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="856556460275592">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="878799509295123" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Pause&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="845040198686256" type="System">
+                            <param id="0" name="Variable">Var_Sistema</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="295894739402449" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="809229299638116" type="System">
+                            <param id="0" name="Variable">Var_Sistema</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="179793605312388" type="System">
+                            <param id="0" name="Layer">&quot;Pause&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="433815760187463" type="SPR_J1">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="411325167638410" type="BS_SPR_P1" />
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="378345695403068" type="SPR_J1_ATK_Shot">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="792056983075364" type="BS_SPR_EN01">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="607119268337819" type="BS_SPR_EN01" />
+                    </actions>
+                </event-block>
+                <event-block sid="197495456616236">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="701368006734144" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Pause&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="600768077596145" type="System">
+                            <param id="0" name="Variable">Var_Sistema</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="774520386769904" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="909551326853114" type="System">
+                            <param id="0" name="Variable">Var_Sistema</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="667993752845802" type="System">
+                            <param id="0" name="Layer">&quot;Pause&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="686996722908889" type="SPR_J1">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="3" name="Start" sid="937523006430270" type="BS_SPR_P1">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="687553481186223" type="SPR_J1_ATK_Shot">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="744663445231207" type="BS_SPR_EN01">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="3" name="Start" sid="375569215518055" type="BS_SPR_EN01">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

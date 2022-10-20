@@ -5,8 +5,9 @@
     <events>
         <variable comment="0=No 1=Tito 2=Corte" constant="0" name="Var_ATK" sid="891166668075349" static="0" type="number">0</variable>
         <variable constant="0" name="Var_PV" sid="420106648173722" static="0" type="number">3</variable>
-        <variable comment="0=Off 1=On" constant="0" name="Var_Sistema" sid="354363732051479" static="0" type="number">0</variable>
+        <variable comment="0=Off 1=On 2=Pause" constant="0" name="Var_Sistema" sid="354363732051479" static="0" type="number">0</variable>
         <include>Ev_Jogador_1</include>
+        <include>Ev_Pause</include>
         <event-block sid="379720638947399">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="269527256916233" type="System" />
